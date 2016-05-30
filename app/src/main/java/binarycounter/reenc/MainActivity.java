@@ -14,18 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String url = "http://192.168.0.19:81/test9.mka"; // your URL here
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        try {
-            mediaPlayer.setDataSource(url);
-            Log.d("ReEnc","Buffering.  ");
-            mediaPlayer.prepare(); // might take long! (for buffering, etc)
-            Log.d("ReEnc","Buffering finished.");
-            mediaPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 }
