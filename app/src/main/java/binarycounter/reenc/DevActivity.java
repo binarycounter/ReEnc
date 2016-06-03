@@ -15,10 +15,13 @@ import java.io.IOException;
 
 public class DevActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
+    MHandler mH = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dev);
+        mH = new MHandler();
+        mH.init(this);
     }
     public void bcSettings(View view)
     {
@@ -28,6 +31,11 @@ public class DevActivity extends AppCompatActivity {
     public void bcCallMain(View view)
     {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+    public void bcCallVLCDev(View view)
+    {
+        Intent intent = new Intent(getApplicationContext(), VLCDevActivity.class);
         startActivity(intent);
     }
     public void bcStream(View view)
@@ -55,5 +63,16 @@ public class DevActivity extends AppCompatActivity {
 
             mediaPlayer.stop();
             mediaPlayer.release();
+    }
+
+
+    public void bcStreamMH(View view){
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        String Surl = sharedPref.getString("pref_surl", "nope");
+        EditText devEdit2 = (EditText)findViewById(R.id.eDev2);
+        String Sfile = devEdit2.getText().toString();
+        String url = Surl+Sfile; // your URL here
+        mH.sLoadPlay(url);
     }
 }

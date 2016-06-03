@@ -22,11 +22,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Call MainActivity"
+        android:text="MainActivity"
         android:id="@+id/bCallMain"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="bcCallMain" />
+        android:onClick="bcCallMain"
+        android:layout_above="@+id/bKillMP"
+        android:layout_toRightOf="@+id/bSettings"
+        android:layout_toEndOf="@+id/bSettings" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,30 +36,59 @@
         android:layout_below="@+id/bSettings"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/bCallMain"
-        android:layout_alignEnd="@+id/bCallMain" />
+        android:layout_toLeftOf="@+id/bKillMP"
+        android:layout_toStartOf="@+id/bKillMP" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stream"
         android:id="@+id/bStream"
-        android:layout_alignBottom="@+id/eDev1"
+        android:onClick="bcStream"
+        android:layout_alignTop="@+id/bKillMP"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/bCallMain"
-        android:layout_toEndOf="@+id/bCallMain"
-        android:onClick="bcStream" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kill MP"
         android:id="@+id/bKillMP"
-        android:layout_above="@+id/eDev1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/bStream"
-        android:layout_alignStart="@+id/bStream"
-        android:onClick="bcKillMP" />
+        android:onClick="bcKillMP"
+        android:layout_alignTop="@+id/eDev1"
+        android:layout_toLeftOf="@+id/bStream"
+        android:layout_toStartOf="@+id/bStream" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VLCDev"
+        android:id="@+id/bCallVLCDev"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/bCallMain"
+        android:layout_alignRight="@+id/bStream"
+        android:layout_alignEnd="@+id/bStream"
+        android:onClick="bcCallVLCDev" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/eDev2"
+        android:layout_below="@+id/bKillMP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/bCallVLCDev"
+        android:layout_toLeftOf="@+id/bCallVLCDev" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stream mH"
+        android:id="@+id/bStreamMH"
+        android:layout_alignBottom="@+id/eDev2"
+        android:layout_alignRight="@+id/bStream"
+        android:layout_alignEnd="@+id/bStream"
+        android:layout_toRightOf="@+id/eDev2"
+        android:layout_toEndOf="@+id/eDev2"
+        android:onClick="bcStreamMH" />
 </RelativeLayout>
